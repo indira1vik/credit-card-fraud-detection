@@ -1,0 +1,55 @@
+Code : 
+rank = df_corr['Class']
+df_rank = pd.DataFrame(rank) 
+df_rank = np.abs(df_rank).sort_values(by='Class',ascending=False)
+df_rank.dropna(inplace=True)
+
+Desc : 
+It takes a DataFrame df_corr and selects the ‘Class’ column, 
+storing it in a variable called rank. Then it creates a new DataFrame df_rank from rank, 
+takes the absolute value of its elements, sorts them in descending order by the ‘Class’ column, 
+and drops any rows with missing values. The resulting DataFrame contains the absolute 
+values of the elements in the ‘Class’ column of df_corr, sorted in descending order 
+and with any missing values removed.
+
+Q : 
+Features V1, V2, … V28 are the principal components obtained with PCA. 
+What does this mean?
+
+Desc :
+It is a statistical technique used to reduce the dimensionality of a large dataset by 
+identifying patterns in the data and creating new variables that capture as much of the 
+variation in the data as possible. These new variables, known as principal components, 
+are linear combinations of the original variables in the dataset. The first principal 
+component captures the most variation in the data, the second captures the second most, and so on.
+
+Q : 
+what value do you get as a result of PCA transformation
+
+Desc :
+As a result of PCA transformation, you get a new set of variables called principal components. 
+These principal components are linear combinations of the original variables in the dataset and 
+capture as much of the variation in the data as possible. The first principal component captures 
+the most variation in the data, the second captures the second most, and so on. The number of principal 
+components created is equal to the number of original variables in the dataset.
+The value of PCA transformation lies in its ability to reduce the dimensionality of a large 
+dataset while retaining most of the information contained in it. This can make it easier to 
+analyze and visualize the data, and can also improve the performance of machine learning 
+algorithms by reducing the number of variables they need to process.
+
+Q : 
+why should mean be 0 and deviation be 1
+
+Desc : 
+Standardizing the data so that each variable has a mean of 0 and a standard deviation of 1 is an 
+important preprocessing step before performing PCA. This is because PCA is quite sensitive to the 
+variances of the initial variables. If there are large differences between the ranges of the 
+initial variables, those variables with larger ranges will dominate over those with small ranges.
+This can lead to biased results.
+By standardizing the data, we ensure that each variable contributes equally to the analysis. 
+This is done by subtracting the mean of each variable from its values and then dividing by its 
+standard deviation. After standardization, each variable will have a mean of 0 and a standard 
+deviation of 1.
+In summary, standardizing the data before performing PCA ensures that each variable contributes 
+equally to the analysis and prevents variables with larger ranges from dominating over those 
+with small ranges.
